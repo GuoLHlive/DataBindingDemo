@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+   >
+    <data>
+
+        <import type="com.example.administrator.servicedemo.bean.BeanDemo"/>
+
+        <variable
+            name="beanDemo"
+            type="BeanDemo"/>
+        <variable
+            name="postion"
+            type="int"/>
+
+    </data>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        >
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:LoadImageUrl="@{beanDemo.showapi_res_body.contentlist.get(postion).img}"
+            tools:src="@mipmap/ic_launcher"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:text="@{beanDemo.showapi_res_body.contentlist.get(postion).title}"
+            />
+    </LinearLayout>
+
+    
+
+</layout>
